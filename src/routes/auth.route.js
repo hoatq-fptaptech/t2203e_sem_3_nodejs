@@ -15,4 +15,6 @@ router.post("/login",controller.loginUser);
 router.get("/change-password",controller.changePassForm);
 router.post("/change-password",controller.updatePass);
 
+router.post("/forgot-password",controller.forgotPassword);
+router.get("/reset-password",controller.resetPasswordForm);
 module.exports = router;
