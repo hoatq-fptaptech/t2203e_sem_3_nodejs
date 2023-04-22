@@ -36,6 +36,7 @@ let student = new mongoose.Schema({
             },
             message: t => `${t.value} không phải là số điện thoại`
         }
-    }
+    },
+    avatar: String
 });
 module.exports = mongoose.model("Student",student);

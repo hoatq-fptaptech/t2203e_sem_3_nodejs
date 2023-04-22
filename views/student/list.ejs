@@ -54,6 +54,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Age</th>
@@ -65,6 +66,7 @@
             <% items.map((item,key)=>{ %>
                 <tr>
                     <th scope="row"><%= key+1 %></th>
+                    <td><img width="50" src="<%= item.avatar %>"/></td>
                     <td><%= item.name %></td>
                     <td><%= item.email %></td>
                     <td><%= item.age %></td>

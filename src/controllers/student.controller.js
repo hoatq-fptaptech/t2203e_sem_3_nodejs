@@ -13,6 +13,11 @@ exports.createForm = (req,res)=>{
 };
 exports.save = (req,res)=>{
     let s = req.body;
+    const file = req.file;
+    console.log(file);
+    if(file){
+        s.avatar = "/uploads/"+file.filename;
+    }
     let newStudent = new Student(s);
     newStudent.save().then(rs=>{
         res.redirect("/students");
