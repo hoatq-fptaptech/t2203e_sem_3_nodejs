@@ -18,6 +18,9 @@ exports.createForm = (req,res)=>{
 };
 exports.save = (req,res)=>{
     let s = req.body;
+    const file = req.file;
+    if(file)
+        s.avatar = "/uploads/student/"+file.filename;
     let newStudent = new Student(s);
     newStudent.save().then(rs=>{
         res.redirect("/students");
@@ -37,6 +40,7 @@ exports.editForm = (req,res)=>{
 };
 exports.update = (req,res)=>{
     let id = req.params.id;
+    const files = req.files;
     let data = req.body;
     Student.findByIdAndUpdate(id,data)
         .then(rs=>res.redirect("/students"))

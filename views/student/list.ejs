@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled">User: <%= auth.name %></a>
+                    <a class="nav-link disabled">User: </a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -54,6 +54,7 @@
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th scope="col">Avatar</th>
                 <th scope="col">Name</th>
                 <th scope="col">Email</th>
                 <th scope="col">Age</th>
@@ -65,6 +66,7 @@
             <% items.map((item,key)=>{ %>
                 <tr>
                     <th scope="row"><%= key+1 %></th>
+                    <td><img width="100" src="<%= item.avatar %>"/></td>
                     <td><%= item.name %></td>
                     <td><%= item.email %></td>
                     <td><%= item.age %></td>
